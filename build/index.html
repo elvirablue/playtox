@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Playtox-Test</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+	<div class="field">
+		<div class="separator separator--top"></div>
+		<div class="battlefield">
+
+			<header class="battlefield__header">
+				<div class="players">
+					<div class="player player--left">
+						<div class="player__avatar">
+							<img src="img/ava.jpg" alt="игрок1">
+							<div class="player__number">1</div>
+						</div>
+						<div class="player__info">
+							<div class="player__name">
+								Lord Byron
+							</div>
+							<div class="player__xp">
+								<div class="progress progress--player">
+									<span class="progress__bar" style="width: 100%;"></span>
+									<span class="progress__value">20 / 100</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="player player--right">
+						<div class="player__avatar">
+							<img src="img/ava.jpg" alt="игрок1">
+							<div class="player__number">2</div>
+						</div>
+						<div class="player__info">
+							<div class="player__name">
+								Lord Byron
+							</div>
+							<div class="player__xp" data-size="10">
+								<div class="progress progress--player">
+									<span class="progress__bar" style="width: 50%;"></span>
+									<span class="progress__value">20 / 100</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="lore">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eaque facilis illum molestiae necessitatibus qui quia reiciendis repudiandae similique unde.
+				</div>
+			</header>
+
+			<main class="battlefield__main">
+				<div class="units">
+					<div
+						data-gamer
+						class="unit unit--gamer">
+						<div class="unit__backlight"></div>
+						<div class="unit__picture"></div>
+						<div class="unit__xp">
+							<div class="progress progress--unit">
+								<span class="progress__bar" style="width: 80%;"></span>
+								<span class="progress__value">20 / 100</span>
+							</div>
+						</div>
+					</div>
+					<div
+						data-zombie
+						class="unit unit--zombie">
+						<div class="unit__backlight"></div>
+						<div class="unit__effect"></div>
+						<div class="unit__picture"></div>
+						<div class="unit__xp">
+							<div class="progress progress--unit">
+								<span class="progress__bar" style="width: 40%;"></span>
+								<span class="progress__value">20 / 100</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</main>
+
+			<footer class="battlefield__controls">
+				<div class="controls">
+					<button
+						data-button-skills
+						type="button"
+						class="control control--skills">
+						<span class="control__value">50</span>
+					</button>
+					<button
+						data-button-attack
+						type="button"
+						class="control control--attack">
+						<span class="control__value">50</span>
+					</button>
+
+				</div>
+			</footer>
+		</div>
+		<div class="separator separator--bottom"></div>
+	</div>
+
+	<!-- JS -->
+	<script src="js/script.js"></script>
+</body>
+</html>

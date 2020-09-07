@@ -1,0 +1,335 @@
+body {
+  margin: 0;
+  padding: 1em 0;
+  height: 100%;
+  background-color: #000000; }
+  body * {
+    box-sizing: border-box; }
+
+.field {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  width: 480px;
+  height: 740px;
+  margin: 0 auto;
+  background: url("../img/cemetery.jpg") top center no-repeat;
+  background-size: contain; }
+
+.battlefield {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  width: 100%;
+  height: 90%;
+  font-size: 16px;
+  color: #ffffff; }
+  .battlefield__main {
+    display: block;
+    margin-top: auto;
+    width: 100%;
+    height: 50%; }
+  .battlefield__controls {
+    display: block;
+    margin-bottom: 4.5em; }
+
+.separator {
+  display: block;
+  width: 100%;
+  height: 0.4em;
+  background: url("../img/battlefield-sep-bg.png") center no-repeat;
+  background-size: 100% auto; }
+  .separator .separator--bottom {
+    margin-top: auto; }
+
+.players {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: start;
+      align-items: flex-start; }
+
+.player {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%; }
+  .player .player__avatar {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    width: 4.8125em;
+    height: 5.5em; }
+    .player .player__avatar img {
+      display: block;
+      width: 72%;
+      height: auto;
+      margin: 0.5em auto 0;
+      border-radius: 50%; }
+    .player .player__avatar:after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("../img/battlefield-head-ava-bg.png") center no-repeat;
+      background-size: contain; }
+  .player .player__info {
+    z-index: 0;
+    display: block;
+    width: 100%;
+    padding-top: 0.5em;
+    font-size: 0.875em; }
+  .player .player__name {
+    display: block;
+    opacity: 0.45; }
+  .player .player__xp {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 2.125em;
+    padding-top: 0.725em;
+    color: #ffe400;
+    background: url("../img/battlefield-head-hp-bg.png") no-repeat;
+    background-size: auto 100%; }
+  .player .player__number {
+    position: relative;
+    z-index: 2;
+    display: block;
+    padding: 8px;
+    text-align: center;
+    font-size: 0.75em;
+    opacity: 0.55; }
+  .player.player--left {
+    -ms-flex-direction: row;
+        flex-direction: row; }
+    .player.player--left .player__name {
+      text-align: left; }
+    .player.player--left .player__xp {
+      margin-left: -0.5em;
+      margin-right: auto;
+      background-position: left center; }
+      .player.player--left .player__xp * {
+        left: 0; }
+      .player.player--left .player__xp .progress {
+        margin-right: auto; }
+        .player.player--left .player__xp .progress .progress__bar {
+          margin-right: auto; }
+          .player.player--left .player__xp .progress .progress__bar:after {
+            left: 100%;
+            border-left: 0.5em solid #8a0000; }
+  .player.player--right {
+    -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse; }
+    .player.player--right .player__name {
+      text-align: right; }
+    .player.player--right .player__xp {
+      margin-right: -0.5em;
+      margin-left: auto;
+      background-position: right center; }
+      .player.player--right .player__xp * {
+        right: 0; }
+      .player.player--right .player__xp .progress {
+        margin-left: auto; }
+        .player.player--right .player__xp .progress .progress__bar {
+          margin-left: auto; }
+          .player.player--right .player__xp .progress .progress__bar:after {
+            right: 100%;
+            border-right: 0.5em solid #8a0000; }
+
+.progress {
+  position: relative;
+  width: 100%; }
+  .progress .progress__bar {
+    position: relative;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: flex;
+    width: 0;
+    max-width: 100%;
+    transition: width 0.2s ease; }
+  .progress .progress__value {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    display: block;
+    white-space: nowrap; }
+  .progress.progress--player {
+    width: 9.5em; }
+    .progress.progress--player .progress__bar {
+      height: 1em;
+      background-color: #8a0000; }
+      .progress.progress--player .progress__bar:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 0;
+        height: 0;
+        border: 0.5em solid transparent;
+        border-top: 0.5em solid #8a0000; }
+    .progress.progress--player .progress__value {
+      height: 1em;
+      padding: 0.125em 0.75em;
+      font-size: 0.75em; }
+  .progress.progress--unit .progress__bar {
+    height: 0.25em;
+    background-color: #0d8800; }
+  .progress.progress--unit .progress__value {
+    height: 0.375em;
+    padding: 0.125em 0.5em;
+    font-size: 0.5em;
+    color: transparent; }
+
+.lore {
+  display: block;
+  max-height: 2.5em;
+  margin-top: -1.5em;
+  padding: 0 6em;
+  font-size: 0.75em;
+  text-align: center;
+  overflow: hidden;
+  opacity: 0.55; }
+
+.units {
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 100%; }
+
+.unit {
+  position: relative;
+  display: block;
+  width: 50%;
+  height: 70%; }
+  .unit .unit__backlight {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    width: 6.625em;
+    height: 4em;
+    background: url("../img/unit-current-bg.png") center top no-repeat;
+    background-size: 100% auto; }
+  .unit .unit__effect {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 12em;
+    height: 7em;
+    background: url("../img/effect.png") center no-repeat;
+    background-size: 100% auto;
+    opacity: 0;
+    transition: opacity 0.2s ease; }
+    .unit .unit__effect.unit__effect--active {
+      opacity: 1; }
+  .unit .unit__picture {
+    position: absolute;
+    z-index: 3;
+    display: block;
+    width: 15.5em;
+    height: 15.5em;
+    background: center top no-repeat;
+    background-size: 100% auto;
+    transition: none; }
+  .unit .unit__xp {
+    position: absolute;
+    z-index: 4;
+    display: block;
+    width: 3em;
+    height: 0.5em;
+    padding: 1px;
+    background-color: #000000;
+    border: 1px solid #0d8800; }
+  .unit.unit--gamer {
+    margin-top: auto; }
+    .unit.unit--gamer .unit__backlight {
+      left: 3em;
+      bottom: 3.75em; }
+    .unit.unit--gamer .unit__picture {
+      bottom: 0.5em;
+      left: 0;
+      background-image: url("../img/thief.png"); }
+    .unit.unit--gamer .unit__xp {
+      left: 4.75em;
+      bottom: 4em; }
+  .unit.unit--zombie {
+    margin-bottom: auto; }
+    .unit.unit--zombie .unit__backlight {
+      right: 5em;
+      bottom: 4em; }
+    .unit.unit--zombie .unit__effect {
+      right: 1.5em;
+      bottom: 3.5em; }
+    .unit.unit--zombie .unit__xp {
+      right: 6.75em;
+      bottom: 4.25em; }
+    .unit.unit--zombie .unit__picture {
+      bottom: 1em;
+      right: 1.75em;
+      background-image: url("../img/zombie.png"); }
+    .unit.unit--zombie.unit--rage .unit__picture {
+      background-image: url("../img/zombie-rage.png"); }
+    .unit.unit--zombie.unit--animated-attack .unit__picture {
+      will-change: background;
+      animation: play-zombie-attack 0.6s steps(6, start); }
+
+.controls {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  -ms-flex-align: end;
+      align-items: flex-end; }
+
+.control {
+  display: block;
+  color: currentColor;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
+  background-repeat: no-repeat; }
+  .control.control--skills {
+    width: 4.25em;
+    height: 4.25em;
+    color: transparent;
+    background: url("../img/skills.png") no-repeat center -42.5em;
+    background-size: 100% auto; }
+    .control.control--skills .control__value {
+      font-size: 1em; }
+  .control.control--attack {
+    width: 7.625em;
+    height: 8.25em;
+    padding: 1.5em 1em 0.75em 1.5em;
+    margin: 0;
+    text-align: center;
+    background-image: url("../img/atack-button-bg.png");
+    background-size: 100% auto;
+    background-position: top center;
+    transition: color 0.1s ease-in-out; }
+    .control.control--attack .control__value {
+      font-size: 1.25em; }
+    .control.control--attack:disabled, .control.control--attack.control--disabled {
+      color: transparent;
+      background-position: bottom center; }
+
+@media screen and (max-width: 480px) {
+  .field {
+    width: 100vw;
+    height: 100vh;
+    max-height: 154vw; }
+  .battlefield {
+    font-size: 3.33333vw; }
+  .separator {
+    height: 1.54vw; } }
+
+@keyframes play-zombie-attack {
+  0% {
+    background-position-y: 0; }
+  100% {
+    background-position-y: -73.125em; } }
